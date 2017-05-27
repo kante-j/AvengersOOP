@@ -20,4 +20,3 @@ public class RollDice extends JApplet {
 	        window.setVisible(true);
 	    }
 	}
-

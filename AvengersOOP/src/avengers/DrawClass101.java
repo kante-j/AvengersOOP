@@ -34,7 +34,7 @@ public class DrawClass101 extends JPanel {
                }
                repaint();
                try {
-                  Thread.sleep(50);
+                  Thread.sleep(0);
                } catch (InterruptedException e) {
                   // TODO Auto-generated catch block
                   e.printStackTrace();
@@ -54,20 +54,20 @@ g2d.drawOval(0, 0, 50, 50);
       System.out.println("Graphic");
    }
    
-//   public static void main(String[] args){
-//      
-//      fr = new JFrame();
-//      fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//      
-//      DrawClass101 dr = new DrawClass101();
-//      fr.add(dr);
-//      
-//      fr.setSize(300,300);
-//      fr.setVisible(true);
-//
-//      
-//      
-//   }
+   public static void main(String[] args){
+      
+      fr = new JFrame();
+      fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
+      DrawClass101 dr = new DrawClass101();
+      fr.add(dr);
+      
+      fr.setSize(300,300);
+      fr.setVisible(true);
+
+      
+      
+   }
 
    
 }

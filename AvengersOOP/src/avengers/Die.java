@@ -5,6 +5,7 @@ import javax.swing.*;
 
 ////////////////////////////////////////////////////////////////////// class Die
 public class Die extends JComponent {
+	
     //================================================================ constants
     private static final int SPOT_DIAM = 9;  // Diameter of spots
     

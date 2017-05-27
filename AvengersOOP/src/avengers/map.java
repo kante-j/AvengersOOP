@@ -1,30 +1,28 @@
 package avengers;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.EventQueue;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
-import javax.swing.*;
+public class map {
 
-public class map extends JFrame{
-	Container content;
-	 Map_Avengers imgP;
-	private JFrame frame= new JFrame("Game");
+	private JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		Mappanel chr = new Mappanel();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					map window = new map();
-					//window.frame.setVisible(true);
-					window.frame.setTitle("Game");
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,20 +35,50 @@ public class map extends JFrame{
 	 */
 	public map() {
 		initialize();
-		
 	}
 
 	/**
 	 * Initialize the contents of the frame.
-	 * @return 
 	 */
-	public void initialize(){
-		   Mappanel imgP = new Mappanel();
-		   content = getContentPane();     
-		   content.add(imgP, BorderLayout.CENTER);
-		   setSize(1230	, 750);
-		   setVisible(true);
-		 }
-	
-		 
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 1250, 750);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		DrawChar dc = new DrawChar();
+		dc.setBounds(0,0,220,330);
+		dc.setOpaque(false);
+		layeredPane.add(dc);
+		
+		RollDicePanel rdp = new RollDicePanel();
+		rdp.setBounds(0, 574, 139, 127);
+		layeredPane.add(rdp);
+		
+		
+		Mappanel imgP = new Mappanel();
+		imgP.setBounds(0,0,1250,750);
+		layeredPane.add(imgP);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(167, 120, 57, 15);
+		layeredPane.add(lblNewLabel);
+		
+	}
 }

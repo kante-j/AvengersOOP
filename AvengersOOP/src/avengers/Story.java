@@ -24,7 +24,7 @@ import java.awt.event.ActionEvent;
 
 public class Story {
 
-	
+	public boolean started = false;
 	private JFrame frame;
 	private JPanel panel;
 	/**
@@ -77,8 +77,17 @@ public class Story {
 		JButton btnStart = new JButton("NEXT");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			            try {
+			               SelectChar frame1 = new SelectChar();
+			               frame1.setVisible(true);
+			            } catch (Exception e1) {
+			               e1.printStackTrace();
+			            }
+				frame.setVisible(false);
 			}
 		});
+		
+
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -105,6 +114,10 @@ public class Story {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 		
+	}
+
+	public void start() {
+		started = true;
 	}
 }
 

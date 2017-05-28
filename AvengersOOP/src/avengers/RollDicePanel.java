@@ -10,8 +10,8 @@ public class RollDicePanel extends JPanel {
  
     private Die _leftDie;   
     private Die _rightDie;
-
-
+    
+    
     RollDicePanel() {
         //... Create the dice
         _leftDie  = new Die();

@@ -1,6 +1,7 @@
 package avengers;
 
-public interface Questions {
-	boolean check();
-	void showDescription();
+public class Questions {
+	
+	
+	
 }

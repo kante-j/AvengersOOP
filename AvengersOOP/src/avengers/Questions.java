@@ -1,7 +1,7 @@
 package avengers;
 
-public class Questions {
+public interface Questions {
 	
-	
+	public boolean check(String answer);
 	
 }

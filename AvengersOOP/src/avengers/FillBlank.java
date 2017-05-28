@@ -105,7 +105,7 @@ public class FillBlank extends JFrame implements Questions{
 	}
 
 	@Override
-	public boolean check() {
+	public boolean check(String answer2) {
 		String answer2 = textField.getText();
 		if(answer.equalsIgnoreCase(answer2))
 			return true;

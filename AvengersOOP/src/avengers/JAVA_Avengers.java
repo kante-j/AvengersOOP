@@ -24,7 +24,8 @@ public class JAVA_Avengers {
 		}
 	
 	if(location ==1){
-		new FillBlank();
+		FillBlank fb = new FillBlank();
+		fb.
 	}
 	else if(location ==2){
 		

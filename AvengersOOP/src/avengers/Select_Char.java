@@ -1,4 +1,4 @@
-package kr.ac.ajou.serin.avengers_;
+package avengers;
 
 import java.awt.EventQueue;
 import java.io.BufferedReader;
@@ -21,11 +21,22 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Select_Char extends Avengers{
+public class Select_Char{
 
 	private JFrame frame;
+	private int charval=0;
 
 	
+
+	public int getCharval() {
+		return charval;
+	}
+
+
+	public void setCharval(int charval) {
+		this.charval = charval;
+	}
+
 
 	/**
 	 * Launch the application.
@@ -76,16 +87,13 @@ public class Select_Char extends Avengers{
 		});
 		ButtonHulk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				player.setType(1);	//hulk
-
-				animation ani = new animation();
-				ani.run();
+				setCharval(1);
+				new map(charval);
 				frame.setVisible(false);
 				
 			}
 		});
-		ButtonHulk.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\lab2\\avengers_\\Hulk_(comics_character).png"));
+		ButtonHulk.setIcon(new ImageIcon("C:\\Users\\Jiseok\\Desktop\\Avengers\\HULK.png"));
 
 		JButton ButtonCap = new JButton("captine");
 		ButtonCap.setBorderPainted(false);
@@ -106,14 +114,12 @@ public class Select_Char extends Avengers{
 		ButtonCap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-
-				player.setType(2); //captine america
-				animation ani = new animation();
-				ani.run();
+				setCharval(2);
+				new map(charval);
+				frame.setVisible(false);
 			}
 		});
-		ButtonCap.setIcon(new ImageIcon(
-				"C:\\Users\\user\\Desktop\\lab2\\avengers_\\usa_avengers_herochi_captainamerica_r_c81e0aa5.png"));
+		ButtonCap.setIcon(new ImageIcon("C:\\Users\\Jiseok\\Desktop\\Avengers\\CaptineAmerica.png"));
 
 		JLabel lblChooseYourPlayer = new JLabel("CHOOSE YOUR PLAYER!");
 		lblChooseYourPlayer.setForeground(Color.WHITE);

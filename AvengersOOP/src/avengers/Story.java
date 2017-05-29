@@ -78,8 +78,9 @@ public class Story {
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			            try {
-			               SelectChar frame1 = new SelectChar();
-			               frame1.setVisible(true);
+			               Select_Char sc = new Select_Char();
+			               sc.run();
+			               frame.setVisible(false);
 			            } catch (Exception e1) {
 			               e1.printStackTrace();
 			            }

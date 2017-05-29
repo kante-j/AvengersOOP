@@ -25,7 +25,7 @@ public class Select_Char{
 
 	private JFrame frame;
 	private int charval=0;
-
+	String[] args;
 	
 
 	public int getCharval() {
@@ -88,7 +88,8 @@ public class Select_Char{
 		ButtonHulk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setCharval(1);
-				new map(charval);
+				map m = new map(charval);
+				m.main(args);
 				frame.setVisible(false);
 				
 			}
@@ -113,9 +114,9 @@ public class Select_Char{
 		});
 		ButtonCap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				setCharval(2);
-				new map(charval);
+				map m = new map(charval);
+				m.main(args);
 				frame.setVisible(false);
 			}
 		});

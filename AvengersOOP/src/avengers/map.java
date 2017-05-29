@@ -13,6 +13,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class map {
 
 	private JFrame frame;
+	private static int charval=0;
 
 	/**
 	 * Launch the application.
@@ -21,7 +22,7 @@ public class map {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					map window = new map(1);
+					map window = new map(charval);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,6 +35,7 @@ public class map {
 	 * Create the application.
 	 */
 	public map(int charval) {
+		this.charval=charval;
 		initialize(charval);
 	}
 

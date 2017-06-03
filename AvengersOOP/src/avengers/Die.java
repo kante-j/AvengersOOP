@@ -55,7 +55,7 @@ public class Die extends JComponent {
         Graphics2D g2 = (Graphics2D)g;  // See note below
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        
+        System.out.println(_faceValue);
         //... Paint background
         g2.setColor(Color.WHITE);
         g2.fillRect(0, 0, w, h);

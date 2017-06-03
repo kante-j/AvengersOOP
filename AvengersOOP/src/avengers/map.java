@@ -46,8 +46,7 @@ public class map {
 		frame = new JFrame();
 		frame.setBounds(0, 0, 1250, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		
+		int[] chararr = {0,0,220,330};
 		JLayeredPane layeredPane = new JLayeredPane();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -65,13 +64,14 @@ public class map {
 					.addContainerGap())
 		);
 		DrawChar dc = new DrawChar(charval);
-		dc.setBounds(0,0,220,330);
+		dc.setBounds(chararr[0],chararr[1],chararr[2],chararr[3]);
 		dc.setOpaque(false);
 		layeredPane.add(dc);
 		
 		RollDicePanel rdp = new RollDicePanel();
 		rdp.setBounds(0, 574, 139, 127);
 		layeredPane.add(rdp);
+	//	rdp.getDiceval();
 		
 		
 		Mappanel imgP = new Mappanel();

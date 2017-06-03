@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -89,8 +91,10 @@ public class Select_Char{
 			public void actionPerformed(ActionEvent e) {
 				setCharval(1);
 				map m = new map(charval);
+				new JAVA_Avengers(1);
 				m.main(args);
 				frame.setVisible(false);
+				 JOptionPane.showMessageDialog(null,"You choose HULK!!!");
 				
 			}
 		});
@@ -116,6 +120,7 @@ public class Select_Char{
 			public void actionPerformed(ActionEvent e) {
 				setCharval(2);
 				map m = new map(charval);
+				new JAVA_Avengers(2);
 				m.main(args);
 				frame.setVisible(false);
 			}

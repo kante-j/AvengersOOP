@@ -9,10 +9,21 @@ import javax.swing.event.*;
 public class RollDicePanel extends JPanel {
  
     private Die _leftDie;   
-    private Die _rightDie;
+  //private Die _rightDie;
+    private int diceval;
     
-    
-    RollDicePanel() {
+    public int getDiceval() {
+		System.out.println(diceval);
+		return diceval;
+	}
+
+
+	public void setDiceval(int diceval) {
+		this.diceval = diceval;
+	}
+
+
+	RollDicePanel() {
         //... Create the dice
         _leftDie  = new Die();
         
@@ -28,8 +39,8 @@ public class RollDicePanel extends JPanel {
         this.setLayout(new BorderLayout(5, 5));
         this.add(rollButton, BorderLayout.NORTH);
         this.add(_leftDie , BorderLayout.CENTER);
-       
-        
+       //setDiceval(_leftDie.getValue());
+        _leftDie.getValue();
         this.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
     }
     

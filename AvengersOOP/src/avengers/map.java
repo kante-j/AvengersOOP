@@ -22,7 +22,7 @@ public class map {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					map window = new map(charval);
+					map window = new map();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,15 +34,15 @@ public class map {
 	/**
 	 * Create the application.
 	 */
-	public map(int charval) {
-		this.charval=charval;
-		initialize(charval);
+	public map() {
+//		this.charval=charval;
+		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(int charval) {
+	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(0, 0, 1250, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,7 +63,7 @@ public class map {
 					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
 					.addContainerGap())
 		);
-		DrawChar dc = new DrawChar(charval);
+		DrawChar dc = new DrawChar();
 		dc.setBounds(chararr[0],chararr[1],chararr[2],chararr[3]);
 		dc.setOpaque(false);
 		layeredPane.add(dc);

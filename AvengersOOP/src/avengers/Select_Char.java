@@ -23,9 +23,10 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Select_Char{
+public class Select_Char extends JFrame{
 
-	private JFrame frame;
+	private JPanel panel;
+	//private JFrame frame;
 	private int charval=0;
 	String[] args;
 	
@@ -47,7 +48,7 @@ public class Select_Char{
 	public void run() {
 		try {
 			Select_Char window = new Select_Char();
-			window.frame.setVisible(true);
+			window.panel.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -67,10 +68,10 @@ public class Select_Char{
 		
 	
 		
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 984, 541);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		getContentPane().setBackground(Color.BLACK);
+		setBounds(100, 100, 984, 541);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JButton ButtonHulk = new JButton("hulk");
 		ButtonHulk.setContentAreaFilled(false);
@@ -89,11 +90,14 @@ public class Select_Char{
 		});
 		ButtonHulk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setCharval(1);
-				map m = new map(charval);
-				new JAVA_Avengers(1);
+				
+				FrameManager.getInstance().char_val = 1;
+				//int x = FrameManager.getInstance().char_val;
+				
+				map m = new map();
+				new JAVA_Avengers();
 				m.main(args);
-				frame.setVisible(false);
+				panel.setVisible(false);
 				 JOptionPane.showMessageDialog(null,"You choose HULK!!!");
 				
 			}
@@ -119,17 +123,17 @@ public class Select_Char{
 		ButtonCap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setCharval(2);
-				map m = new map(charval);
-				new JAVA_Avengers(2);
+				map m = new map();
+				new JAVA_Avengers();
 				m.main(args);
-				frame.setVisible(false);
+				panel.setVisible(false);
 			}
 		});
 		ButtonCap.setIcon(new ImageIcon("C:\\Users\\Jiseok\\Desktop\\Avengers\\CaptineAmerica.png"));
 
 		JLabel lblChooseYourPlayer = new JLabel("CHOOSE YOUR PLAYER!");
 		lblChooseYourPlayer.setForeground(Color.WHITE);
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup().addContainerGap()
 						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
@@ -146,7 +150,7 @@ public class Select_Char{
 						.addComponent(ButtonHulk, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 								Short.MAX_VALUE))
 				.addContainerGap(73, Short.MAX_VALUE)));
-		frame.getContentPane().setLayout(groupLayout);
+		getContentPane().setLayout(groupLayout);
 	}
 
 }
